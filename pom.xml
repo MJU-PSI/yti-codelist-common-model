@@ -6,7 +6,7 @@
     <groupId>fi.vm.yti.codelist</groupId>
     <artifactId>yti-codelist-common-model</artifactId>
     <packaging>jar</packaging>
-    <version>0.8-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>yti-codelist-common-model</name>
     <description>Common data model classes for YTI CodeList services</description>
 
