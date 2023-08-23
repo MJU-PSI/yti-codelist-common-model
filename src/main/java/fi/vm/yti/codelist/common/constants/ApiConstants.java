@@ -30,6 +30,7 @@ public class ApiConstants {
     public static final String FILTER_NAME_MEMBERVALUE = "memberValue";
     public static final String FILTER_NAME_SEARCHHIT = "searchHit";
     public static final String FILTER_NAME_USER = "user";
+    public static final String FILTER_NAME_ANNOTATION = "annotation";
 
     public static final String FIELD_NAME_URI = "uri";
     public static final String FIELD_NAME_URL = "url";
@@ -37,6 +38,7 @@ public class ApiConstants {
 
     public static final String ELASTIC_INDEX_CODEREGISTRY = "coderegistry";
     public static final String ELASTIC_INDEX_CODESCHEME = "codescheme";
+    public static final String ELASTIC_INDEX_ANNOTATIONE = "annotation";
     public static final String ELASTIC_INDEX_CODE = "code";
     public static final String ELASTIC_INDEX_PROPERTYTYPE = "propertytype";
     public static final String ELASTIC_INDEX_EXTERNALREFERENCE = "externalreference";
@@ -45,6 +47,7 @@ public class ApiConstants {
     public static final String ELASTIC_INDEX_VALUETYPE = "valuetype";
     public static final String ELASTIC_TYPE_CODEREGISTRY = "coderegistry";
     public static final String ELASTIC_TYPE_CODESCHEME = "codescheme";
+    public static final String ELASTIC_TYPE_ANNOTATIONE = "annotation";
     public static final String ELASTIC_TYPE_CODE = "code";
     public static final String ELASTIC_TYPE_PROPERTYTYPE = "propertytype";
     public static final String ELASTIC_TYPE_EXTERNALREFERENCE = "externalreference";

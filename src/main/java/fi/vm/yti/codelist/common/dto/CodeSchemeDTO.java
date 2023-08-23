@@ -23,7 +23,7 @@ import static fi.vm.yti.codelist.common.constants.ApiConstants.LANGUAGE_CODE_EN;
 
 @JsonFilter("codeScheme")
 @XmlRootElement
-@XmlType(propOrder = { "id", "codeValue", "uri", "url", "codesUrl", "extensionsUrl", "extensions", "codes", "prefLabel", "definition", "description", "changeNote", "startDate", "endDate", "created", "modified", "contentModified", "statusModified", "status", "version", "source", "legalBase", "governancePolicy", "infoDomains", "languageCodes", "defaultCode", "externalReferences", "conceptUriInVocabularies", "variantsOfThisCodeScheme", "variantMothersOfThisCodeScheme", "nextCodeschemeId", "prevCodeschemeId", "lastCodeschemeId", "allVersions", "organizations", "searchHits", "cumulative", "feedbackChannel" })
+@XmlType(propOrder = { "id", "codeValue", "uri", "url", "codesUrl", "extensionsUrl", "extensions", "codes", "prefLabel", "definition", "description", "changeNote", "startDate", "endDate", "created", "modified", "contentModified", "statusModified", "status", "version", "source", "legalBase", "governancePolicy", "infoDomains", "languageCodes", "defaultCode", "externalReferences", "conceptUriInVocabularies", "variantsOfThisCodeScheme", "variantMothersOfThisCodeScheme", "nextCodeschemeId", "prevCodeschemeId", "lastCodeschemeId", "allVersions", "organizations", "searchHits", "cumulative", "feedbackChannel", "codeSchemeAnnotations" })
 @Schema(name = "CodeScheme DTO", description = "CodeScheme DTO that represents data for one single codescheme.")
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class CodeSchemeDTO extends AbstractHistoricalCodeDTO implements Serializable {
@@ -62,6 +62,7 @@ public class CodeSchemeDTO extends AbstractHistoricalCodeDTO implements Serializ
     private Map<String, String> feedbackChannel;
     private Date contentModified;
     private Date statusModified;
+    private Set<CodeSchemeAnnotationDTO> codeSchemeAnnotations;
 
     public CodeSchemeDTO() {
         prefLabel = new HashMap<>();
@@ -508,5 +509,14 @@ public class CodeSchemeDTO extends AbstractHistoricalCodeDTO implements Serializ
             this.feedbackChannel.remove(language);
         }
         setFeedbackChannel(this.feedbackChannel);
+    }
+
+   @JsonView(Views.Normal.class)
+    public Set<CodeSchemeAnnotationDTO> getCodeSchemeAnnotations() {
+        return codeSchemeAnnotations;
+    }
+
+    public void setCodeSchemeAnnotations(final Set<CodeSchemeAnnotationDTO> codeSchemeAnnotations) {
+        this.codeSchemeAnnotations = codeSchemeAnnotations;
     }
 }

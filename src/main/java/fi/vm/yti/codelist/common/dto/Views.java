@@ -17,6 +17,10 @@ public class Views {
 
     public static class ExtendedCodeScheme extends Normal{}
 
+    public static class ExtendedAnnotation extends Normal{}
+
+    public static class ExtendedCodeSchemeAnnotation extends Normal{}
+
     public static class ExtendedCodeRegistry extends Normal{}
 
     public static class ExtendedOrganization extends Normal{}
