@@ -15,29 +15,29 @@ import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.v3.oas.annotations.media.Schema;
 import static fi.vm.yti.codelist.common.constants.ApiConstants.LANGUAGE_CODE_EN;
 
-@JsonFilter("CodeSchemeAnnotation")
+@JsonFilter("CodeAnnotation")
 @XmlRootElement
-@XmlType(propOrder = { "codeschemeId", "annotationId", "value" })
-@Schema(name = "CodeSchemeAnnotation DTO", description = "Codescheme Annotation DTO that represents data for all.")
+@XmlType(propOrder = { "codeId", "annotationId", "value" })
+@Schema(name = "CodeAnnotation DTO", description = "Code Annotation DTO that represents data for all.")
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class CodeSchemeAnnotationDTO implements Serializable {
+public class CodeAnnotationDTO implements Serializable {
 
-    private UUID codeschemeId;
+    private UUID codeId;
     private UUID annotationId;
     private AnnotationDTO annotation;
     private Map<String, String> value;
 
-    public CodeSchemeAnnotationDTO() {
+    public CodeAnnotationDTO() {
         value = new HashMap<>();
     }
 
     @JsonView(Views.Normal.class)
-    public UUID getCodeschemeId() {
-        return codeschemeId;
+    public UUID getCodeId() {
+        return codeId;
     }
 
-    public void setCodeschemeId(final UUID codeschemeId) {
-        this.codeschemeId = codeschemeId;
+    public void setCodeId(final UUID codeId) {
+        this.codeId = codeId;
     }
 
     @JsonView(Views.Normal.class)

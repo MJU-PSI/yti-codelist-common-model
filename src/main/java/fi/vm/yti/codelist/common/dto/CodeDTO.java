@@ -20,7 +20,7 @@ import static fi.vm.yti.codelist.common.constants.ApiConstants.LANGUAGE_CODE_EN;
 
 @JsonFilter("code")
 @XmlRootElement
-@XmlType(propOrder = { "id", "codeValue", "uri", "url", "status", "order", "hierarchyLevel", "startDate", "endDate", "created", "modified", "statusModified", "prefLabel", "description", "definition", "codeScheme", "shortName", "externalReferences", "broaderCode", "membersUrl", "members", "conceptUriInVocabularies", "codeExtensions", "subCodeScheme" })
+@XmlType(propOrder = { "id", "codeValue", "uri", "url", "status", "order", "hierarchyLevel", "startDate", "endDate", "created", "modified", "statusModified", "prefLabel", "description", "definition", "codeScheme", "shortName", "externalReferences", "broaderCode", "membersUrl", "members", "conceptUriInVocabularies", "codeExtensions", "subCodeScheme", "codeAnnotations" })
 @Schema(name = "Code", description = "Code DTO that represents data for one single code.")
 @JsonIgnoreProperties(value = { "expanded" })
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -43,6 +43,7 @@ public class CodeDTO extends AbstractHistoricalCodeDTO implements Serializable {
     private Set<ExtensionDTO> codeExtensions;
     private CodeSchemeDTO subCodeScheme;
     private Date statusModified;
+    private Set<CodeAnnotationDTO> codeAnnotations;
 
     public CodeDTO() {
         prefLabel = new HashMap<>();
@@ -266,4 +267,13 @@ public class CodeDTO extends AbstractHistoricalCodeDTO implements Serializable {
     public void setSubCodeScheme(final CodeSchemeDTO subCodeScheme) {
         this.subCodeScheme = subCodeScheme;
     }
+
+    @JsonView(Views.Normal.class)
+     public Set<CodeAnnotationDTO> getCodeAnnotations() {
+         return codeAnnotations;
+     }
+ 
+     public void setCodeAnnotations(final Set<CodeAnnotationDTO> codeAnnotations) {
+         this.codeAnnotations = codeAnnotations;
+     }
 }
