@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.v3.oas.annotations.media.Schema;
 import static fi.vm.yti.codelist.common.constants.ApiConstants.LANGUAGE_CODE_EN;
 
-@JsonFilter("CodeAnnotation")
+@JsonFilter("codeAnnotation")
 @XmlRootElement
 @XmlType(propOrder = { "codeId", "annotationId", "value" })
 @Schema(name = "CodeAnnotation DTO", description = "Code Annotation DTO that represents data for all.")
